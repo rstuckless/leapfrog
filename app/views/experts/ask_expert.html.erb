@@ -1,0 +1,9 @@
+<td><%= image_tag @expert.picture_url %></td>
+<td><%= @expert.name %></td>
+<td><%= @expert.email %></td>
+
+<%= form_tag("/submit_question", method: "get") do %>
+  <%= label_tag(:question, "My Question Is:") %>
+  <%= text_area_tag(:question) %>
+  <%= submit_tag("Submit Question") %>
+<% end %>

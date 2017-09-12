@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  skill: one
+  expert: one
+  level: MyString
+
+two:
+  skill: two
+  expert: two
+  level: MyString

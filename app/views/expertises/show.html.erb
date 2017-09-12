@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Expert Name:</strong>
+  <%= @expertise.expert.name %>
+</p>
+<p>
+  <strong>Expert Email:</strong>
+  <%= @expertise.expert.email %>
+</p>
+
+<p>
+  <strong>Level:</strong>
+  <%= @expertise.level %>
+</p>
+<p>
+  <strong>Skill:</strong>
+  <%= @expertise.skill.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_expertise_path(@expertise) %> |
+<%= link_to 'Back', expertises_path %>

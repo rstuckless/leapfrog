@@ -1,0 +1,32 @@
+<%= form_with(model: expert, local: true) do |form| %>
+  <% if expert.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(expert.errors.count, "error") %> prohibited this expert from being saved:</h2>
+
+      <ul>
+      <% expert.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_area :email, id: :expert_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_area :name, id: :expert_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :picture_url %>
+    <%= form.text_area :picture_url, id: :expert_picture_url %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

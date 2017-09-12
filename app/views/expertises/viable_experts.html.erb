@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+<h1>Here are the experts in <%= @expertises.first.skill.name %> </h1>
+<table>
+  <thead>
+    <tr>
+      <th>Picture </th>
+      <th>Expert</th>
+      <th>Expert Email</th>
+      <th>Level</th>
+      <th colspan="5"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @expertises.each do |expertise| %>
+      <tr>
+        <td><%= image_tag expertise.expert.picture_url %></td>
+        <td><%= expertise.expert.name %></td>
+        <td><%= expertise.expert.email %></td>
+        <td><%= expertise.level %></td>
+        <td><%= button_to("Ask A Question", {:controller => "experts", :action => "load_expert_form", :expert_id => expertise.expert.id})%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

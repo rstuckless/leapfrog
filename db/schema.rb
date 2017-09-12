@@ -10,7 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170911203933) do
+ActiveRecord::Schema.define(version: 20170912150128) do
+
+  create_table "expertises", force: :cascade do |t|
+    t.integer "skill_id"
+    t.integer "expert_id"
+    t.string "level"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["expert_id"], name: "index_expertises_on_expert_id"
+    t.index ["skill_id"], name: "index_expertises_on_skill_id"
+  end
+
+  create_table "experts", force: :cascade do |t|
+    t.text "email"
+    t.text "name"
+    t.text "picture_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "skills", force: :cascade do |t|
+    t.text "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "todos", force: :cascade do |t|
     t.string "title"
