@@ -1,9 +1,11 @@
-<td><%= image_tag @expert.picture_url %></td>
-<td><%= @expert.name %></td>
-<td><%= @expert.email %></td>
-
-<%= form_tag("/submit_question", method: "get") do %>
-  <%= label_tag(:question, "My Question Is:") %>
-  <%= text_area_tag(:question) %>
-  <%= submit_tag("Submit Question") %>
+<h2><%= @expertise.expert.name + " is knowledgeable about " + @expertise.skill.name %></h2>
+<form class="form-aligned">
+  <div><%= image_tag @expertise.expert.picture_url %></div>
+  <div class="form-group">
+    <label class="control-label">My Question Is:</label>
+    <%= form_tag({:controller => "experts", :action => "submit_question"}, method: "post", class: "form-control") do %>
+    <%= text_area_tag(:question) %>
+    <%= submit_tag "Submit Question", class: 'btn btn-success form-inline' %>
+  </div>
 <% end %>
+</form>

@@ -1,12 +1,13 @@
 <p id="notice"><%= notice %></p>
 <h1>Here are the experts in <%= @expertises.first.skill.name %> </h1>
-<table>
+<table class = "table table-striped table-bordered">
   <thead>
     <tr>
       <th>Picture </th>
-      <th>Expert</th>
+      <th>Expert Name</th>
       <th>Expert Email</th>
-      <th>Level</th>
+      <th>Job Title</th>
+      <th>Skill Level</th>
       <th colspan="5"></th>
     </tr>
   </thead>
@@ -17,8 +18,9 @@
         <td><%= image_tag expertise.expert.picture_url %></td>
         <td><%= expertise.expert.name %></td>
         <td><%= expertise.expert.email %></td>
+        <td><%= expertise.expert.job_title %></td>
         <td><%= expertise.level %></td>
-        <td><%= button_to("Ask A Question", {:controller => "experts", :action => "load_expert_form", :expert_id => expertise.expert.id})%></td>
+        <td><%= button_to("Ask A Question", {:controller => "experts", :action => "load_expert_form", :expertise_id => expertise.id})%></td>
       </tr>
     <% end %>
   </tbody>

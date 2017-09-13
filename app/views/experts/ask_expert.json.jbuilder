@@ -1,1 +1,1 @@
-json.array! @expert, partial: 'experts/ask_expert', as: :expert
+json.array! @expertise, partial: 'experts/ask_expert', as: :expertise

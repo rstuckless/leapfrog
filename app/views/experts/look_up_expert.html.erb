@@ -1,0 +1,11 @@
+<h2>Who are you?</h2>
+<form class="form-aligned">
+  <div class="form-group">
+    <label class="control-label">My Name Is:</label>
+    <%= form_tag("/dsfdgsd", method: "get", class: "form-control") do %>
+      <%= text_area_tag(:name) %>
+      <% end %>
+    
+      <%= submit_tag "Submit Name", class: 'btn btn-success form-inline' %>
+  </div>
+</form>

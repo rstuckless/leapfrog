@@ -6,14 +6,19 @@ class ExpertsController < ApplicationController
   def index
     @experts = Expert.all
   end
-
+  def load_expert_lookup
+    render "experts/look_up_expert"
+  end
   # GET /experts/1
   # GET /experts/1.json
   def show
   end
+  def find_expertises
+    binding.pry
+  end
   def load_expert_form
-    @expert_id = params[:expert_id]
-    @expert = Expert.find_by_id(@expert_id)
+    expertise_id = params[:expertise_id]
+    @expertise = Expertise.find_by_id(expertise_id)
     render "experts/ask_expert"
   end
   def submit_question

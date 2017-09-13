@@ -1,11 +1,27 @@
 <header>
-  <div class='show-page-header'>
-    <nav>
-      Force Leap
-      <%= inline_svg 'lunch_meat.svg', id: "lunchmeet" %>
-    </nav>
-  </div>
-  <div class='sign_in'>
-	<%= link_to "Sign in with Google here", "/auth/google_oauth2", id: "sign_in" %>
+  <div class="container">
+    <div class="row">
+      <h1> I want to: </h1>
+      <div class="col-xs-9">
+        <div class="row">
+          <div class="col-xs-6">
+                <%= link_to  "/questions", id: "question_link" do %>
+                  <%= image_tag 'findexpert' %>
+                <% end %>
+              <div class="col-xs-6"></div>
+          </div>
+          <div class="col-xs-6">
+            <div class="row">
+              <div class="col-xs-6">
+                <%= link_to "/update_expertises/", id: "expert_link" do %>
+                  <%= image_tag 'addexpertise' %>
+                <% end %>
+              </div>
+              <div class="col-xs-6"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </header>
